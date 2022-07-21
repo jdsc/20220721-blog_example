@@ -1,0 +1,11 @@
+.python-version
+__pycache__/
+.log/
+*.ipynb_checkpoints/
+jupyter.log
+jupyter.pid
+
+/log/
+/db/
+resources/TZF2-001.jsonl
+/resources/TZF2-002.jsonl
