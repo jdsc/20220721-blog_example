@@ -70,7 +70,6 @@ def forward2():
 @main.command()
 def rowwise():
     sheet = Sheet(START, END, ROWS)
-    sheet["期初在庫", START] = 100
 
     today = START
     while today <= END:
@@ -81,6 +80,7 @@ def rowwise():
         )
         today += 1
 
+    sheet["期初在庫", START] = 100
     today = START + 1
     while today <= END:
         sheet["期初在庫", today] = sheet["期末在庫", today - 1]
