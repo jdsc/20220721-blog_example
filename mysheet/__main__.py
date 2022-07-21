@@ -45,6 +45,7 @@ def forward():
 @main.command()
 def forward2():
     sheet = Sheet(START, END, ROWS)
+    sheet["期初在庫", START] = 100
 
     today = START
     while today <= END:
@@ -62,7 +63,34 @@ def forward2():
 
         today += 1
 
+    sheet.calculate()
+    sheet.to_csv(sys.stdout)
+
+
+@main.command()
+def rowwise():
+    sheet = Sheet(START, END, ROWS)
     sheet["期初在庫", START] = 100
+
+    today = START
+    while today <= END:
+        sheet["期末在庫", today] = (
+            sheet["期初在庫", today] +
+            sheet["入荷量", today] -
+            sheet["出荷量", today]
+        )
+        today += 1
+
+    today = START + 1
+    while today <= END:
+        sheet["期初在庫", today] = sheet["期末在庫", today - 1]
+        today += 1
+
+    today = START + 1
+    while today <= END:
+        sheet["入荷量", today] = IN_NUM[today - START]
+        sheet["出荷量", today] = OUT_NUM[today - START]
+        today += 1
 
     sheet.calculate()
     sheet.to_csv(sys.stdout)
