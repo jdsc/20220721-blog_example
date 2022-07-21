@@ -86,7 +86,7 @@ def rowwise():
         sheet["期初在庫", today] = sheet["期末在庫", today - 1]
         today += 1
 
-    today = START + 1
+    today = START
     while today <= END:
         sheet["入荷量", today] = IN_NUM[today - START]
         sheet["出荷量", today] = OUT_NUM[today - START]
