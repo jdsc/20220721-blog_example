@@ -1,7 +1,7 @@
 # Pythonで計算の過程を宣言的に記述する
 
-mediumの記事の実装例です。
-todo: 記事へのリンクを入れる。
+mediumの記事の実装例です [link](https://medium.com/jdsc-tech-blog/python%E3%81%A7%E8%A8%88%E7%AE%97%E3%81%AE%E9%81%8E%E7%A8%8B%E3%82%92%E5%AE%A3%E8%A8%80%E7%9A%84%E3%81%AB%E8%A8%98%E8%BF%B0%E3%81%99%E3%82%8B-3bb1864aae30)
+
 
 ## 動かし方
 
